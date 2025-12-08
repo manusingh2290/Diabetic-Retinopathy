@@ -22,10 +22,11 @@ st.title("👁️ Diabetic Retinopathy Detector")
 # GOOGLE DRIVE MODEL DOWNLOAD LINKS
 # ---------------------------------------------------------
 MODEL_URLS = {
-    "best_model.h5": "https://drive.google.com/file/d/1yKtQdHNaVFIq6g-j6Mn0RlqYTS5RjXre/view?usp=sharing",
-    "final_model.h5": "https://drive.google.com/file/d/1T2cgXyayzJ4eskeSX2oE4_QLyeNU8BjM/view?usp=sharing",
-    "final1.h5": "https://drive.google.com/file/d/1zV42a1RjybxQ3dnAmT6alizpwOED6PmB/view?usp=sharing"
+    "best_model.h5": "https://drive.google.com/uc?id=1yKtQdHNaVFIq6g-j6Mn0RlqYTS5RjXre",
+    "final_model.h5": "https://drive.google.com/uc?id=1T2cgXyayzJ4eskeSX2oE4_QLyeNU8BjM",
+    "final1.h5": "https://drive.google.com/uc?id=1zV42a1RjybxQ3dnAmT6alizpwOED6PmB"
 }
+
 
 
 # ---------------------------------------------------------
@@ -39,7 +40,7 @@ def ensure_model(model_name):
 
     if not os.path.exists(model_path):
         st.warning(f"⬇ Downloading model: {model_name} ... please wait")
-        gdown.download(MODEL_URLS[model_name], model_path, quiet=False)
+        gdown.download(url=MODEL_URLS[model_name], output=model_path, quiet=False, fuzzy=True)
         st.success(f"Model {model_name} downloaded successfully!")
 
     return model_path
