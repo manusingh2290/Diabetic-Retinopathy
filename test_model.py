@@ -8,7 +8,7 @@ import pandas as pd
 
 MODEL_PATH = "models/final1.h5"
 DATASET_TRAIN_PATH = "data/DR/train"   # Used to extract class names
-IMG_PATH = r"Healthy/Healthy_41.png"   # Single test image path
+IMG_PATH = r"Mild DR/Mild_DR_65.png"   # Single test image path
 TEST_FOLDER = r"Proliferate DR"               # 🔁 Change this to test a full folder
 EXPORT_CSV = True                      # Save predictions to CSV if True
 

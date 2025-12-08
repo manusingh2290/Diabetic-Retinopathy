@@ -16,7 +16,7 @@ from utils import create_generators, compute_class_weights
 def parse_args():
     parser = argparse.ArgumentParser(description="Train EfficientNetB4 for Diabetic Retinopathy Detection")
     parser.add_argument('--dataset', required=True, help='Path to dataset folder (train/val/test)')
-    parser.add_argument('--epochs', type=int, default=30, help='Number of training epochs')
+    parser.add_argument('--epochs', type=int, default=40, help='Number of training epochs')
     parser.add_argument('--batch_size', type=int, default=8, help='Batch size')
     parser.add_argument('--num_classes', type=int, default=5, help='Number of output classes')
     parser.add_argument('--save_dir', default='models', help='Directory to save trained models')
@@ -103,7 +103,7 @@ def main():
     # ---------------------------------------------------------
     # Train Model
     # ---------------------------------------------------------
-    print("\n🚀 Starting 30-epoch full fine-tuning with class balancing...\n")
+    print("\n🚀 Starting 40-epoch full fine-tuning with class balancing...\n")
 
     history = model.fit(
         train_loader,

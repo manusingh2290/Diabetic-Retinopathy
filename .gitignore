@@ -1,0 +1,20 @@
+# Prevent large model files from going into GitHub
+models/*.h5
+models/*.hdf5
+models/*.pb
+models/*.ckpt
+*.zip
+*.tar.gz
+*.pt
+*.onnx
+
+# Prevent unnecessary log/data files
+data/
+logs/
+__pycache__/
+*.ipynb_checkpoints/
+
+# OS files
+*.DS_Store
+
+venv/
