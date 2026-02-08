@@ -129,7 +129,7 @@ c_id, c1, c2, c3 = st.columns([1.5, 2, 1, 1])
 c_id.text_input("System Patient ID", value=st.session_state.patient_id, disabled=True, key=f"id_box_{st.session_state.form_iteration}")
 p_name = c1.text_input("Full Name", disabled=st.session_state.locked, key=f"name_{st.session_state.form_iteration}")
 p_age = c2.number_input("Age", 0, 120, 18, disabled=st.session_state.locked, key=f"age_{st.session_state.form_iteration}")
-p_gender = c3.selectbox("Gender", ["Male", "Female", "Other"], disabled=st.session_state.locked, key=f"gen_{st.session_state.form_iteration}")
+p_gender = c3.selectbox("Gender", ["Choose", "Male", "Female", "Other"], disabled=st.session_state.locked, key=f"gen_{st.session_state.form_iteration}")
 
 p_notes = st.text_area("Clinical History/Notes", disabled=st.session_state.locked, key=f"notes_{st.session_state.form_iteration}")
 st.markdown('</div>', unsafe_allow_html=True)
