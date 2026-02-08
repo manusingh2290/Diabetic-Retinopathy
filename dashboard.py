@@ -87,17 +87,25 @@ st.markdown("""
 # MODEL SELECTION
 # ---------------------------------------------------------
 MODEL_URLS = {
-    "best_model.h5": "https://drive.google.com/file/d/1yKtQdHNaVFIq6g-j6Mn0RlqYTS5RjXre/view?usp=sharing",
-    "final_model.h5": "https://drive.google.com/file/d/1T2cgXyayzJ4eskeSX2oE4_QLyeNU8BjM/view?usp=sharing",
-    "final1.h5": "https://drive.google.com/file/d/1zV42a1RjybxQ3dnAmT6alizpwOED6PmB/view?usp=sharing"
+    "best_model.h5": "https://drive.google.com/uc?id=1yKtQdHNaVFIq6g-j6Mn0RlqYTS5RjXre",
+    "final_model.h5": "https://drive.google.com/uc?id=1T2cgXyayzJ4eskeSX2oE4_QLyeNU8BjM",
+    "final1.h5": "https://drive.google.com/uc?id=1zV42a1RjybxQ3dnAmT6alizpwOED6PmB"
 }
 
 def ensure_model(model_name):
     os.makedirs("models", exist_ok=True)
     path = f"models/{model_name}"
-    if not os.path.exists(path):
-        with st.spinner(f"Downloading model: {model_name}..."):
-            gdown.download(MODEL_URLS[model_name], path, quiet=False)
+
+    if not os.path.exists(path) or os.path.getsize(path) < 5_000_000:
+        st.warning(f"Downloading model: {model_name}")
+        gdown.download(MODEL_URLS[model_name], path, quiet=False, fuzzy=True)
+
+        if os.path.getsize(path) < 5_000_000:
+            st.error("Model download failed or corrupted. Check Drive permissions.")
+            st.stop()
+
+        st.success("Model downloaded successfully")
+
     return path
 
 st.markdown('<div class="card"><h3>🧠 Select Deep Learning Engine</h3>', unsafe_allow_html=True)
