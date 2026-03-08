@@ -116,17 +116,7 @@ The app automatically downloads .h5 models from Google Drive via gdown.
 ---
 
 # 🔥 Why Grad-CAM?
-Grad-CAM helps clinicians understand:
-
-- Where the model is focusing
-
-- Whether the prediction corresponds to real pathology
-
-- How confident the model is
-
-- If the network is attending to medical features or noise
-
-This improves interpretability and trust in AI-driven diagnosis.
+Grad-CAM provides visual explanations for CNN predictions by highlighting regions in the image that influenced the model's decision. In medical AI systems like diabetic retinopathy detection, interpretability is critical because clinicians must verify whether the model is focusing on pathological regions rather than irrelevant features.
 
 ---
 
