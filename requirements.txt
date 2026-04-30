@@ -8,5 +8,5 @@ tqdm
 streamlit
 pillow
 scipy
-gdown
+gdown==4.7.3
 fpdf
